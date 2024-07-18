@@ -1,0 +1,175 @@
+*{
+  font-family: "Yeseva One", serif;
+  font-weight: 400;
+  font-style: normal;
+  margin:0;
+  padding:0;
+}
+
+.symbol{
+  position:relative;
+  margin-left: 11px;
+}
+
+.symbol::after{
+  position: absolute;
+  content:'____________';
+  color: #E3B873;
+  bottom:2px;
+  
+}
+.symbol::before{
+  position: absolute;
+  content:'__';
+  bottom: 2px;
+  left:-10px;
+}
+
+
+h2,h3{
+  color:#E3B873;
+}
+
+body{
+  color:white;
+  background-color:#131313;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+p,span{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+p{
+  margin:30px 0;
+}
+
+span{
+  font-size:14px;
+}
+
+.main{
+  max-width:1440px;
+  max-height:1000px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.first__section-main-container{
+  width:500px;
+} 
+
+.first__section-info-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:30px;
+}
+
+.cities-menu{
+  display:flex;
+  flex-direction: row;
+  gap:50px;
+}
+
+.city {
+  cursor: pointer;
+  margin-bottom: 10px;
+  color: #333;
+  position: relative; /* Добавляем позиционирование */
+  transition: color 0.3s ease, transform 0.3s ease; /* Плавные переходы для цвета текста и transform */
+}
+
+.text-active{
+  text-decoration: underline;
+  color:#E3B873;
+}
+
+.image-active,
+.slider__images{
+  opacity: 1;
+}
+
+.slider{
+  position:relative;
+  margin:20px 0;
+}
+
+.slider__images {
+  position: relative;
+  width: 620px;
+  height: 250px;
+}
+
+.slider__images .image {
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  
+  transition: opacity 800ms ease;
+}
+
+.slider__arrows {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+
+.slider__arrow {
+  position: absolute;
+  width: 15%;
+  height: 100%;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  opacity:0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  transition: opacity 0.4s ease;
+}
+
+.slider__arrow:hover {
+  opacity: 1;
+}
+
+.slider__arrow.left {
+  left: 0;
+}
+
+.slider__arrow.right {
+  right: 0;
+}
+
+.slider__dots {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  bottom: -20px;
+  width: 100%;
+}
+
+.slider__dots-item {
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background 0.4s ease;
+}
+
+.slider__dots-item:hover, .slider__dots-item.active {
+  background: #000;
+}
