@@ -1,5 +1,5 @@
 *{
-  font-family: "Yeseva One", serif;
+  font-family: "Yeseva One", cursive;
   font-weight: 400;
   font-style: normal;
   margin:0;
@@ -30,6 +30,10 @@ h2,h3{
   color:#E3B873;
 }
 
+h3{
+  margin:10px 0;
+}
+
 body{
   color:white;
   background-color:#131313;
@@ -49,6 +53,7 @@ p{
 
 span{
   font-size:14px;
+  transition: all 0.5s ease;
 }
 
 .main{
@@ -58,14 +63,21 @@ span{
   grid-template-columns: 1fr 1fr;
 }
 
-.first__section-main-container{
+.first__section{
   width:500px;
-} 
+}
+
+.first__section-main-container{
+  margin-top:30px;
+  margin-left:30px;
+  display:grid;
+  gap:10px;
+}
 
 .first__section-info-grid{
   display:grid;
   grid-template-columns: 1fr 1fr;
-  gap:30px;
+  gap:20px;
 }
 
 .cities-menu{
@@ -87,21 +99,19 @@ span{
   color:#E3B873;
 }
 
-.image-active,
-.slider__images{
-  opacity: 1;
-}
-
 .slider{
+  cursor: pointer;
   position:relative;
   margin:20px 0;
+
 }
 
 .slider__images {
   position: relative;
   width: 620px;
-  height: 250px;
+  height: 400px;
 }
+
 
 .slider__images .image {
   background-size: cover;
@@ -111,9 +121,14 @@ span{
   position: absolute;
   left: 0;
   top: 0;
-  
+  opacity:0;
   transition: opacity 800ms ease;
 }
+
+.slider__images .image.image-active{
+  opacity:1;
+}
+
 
 .slider__arrows {
   position: absolute;
@@ -125,30 +140,25 @@ span{
 }
 
 .slider__arrow {
+  margin-top:38px;
   position: absolute;
   width: 15%;
   height: 100%;
-  font-size: 20px;
+  font-size: 40px;
   text-align: center;
   cursor: pointer;
-  opacity:0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.4);
-  transition: opacity 0.4s ease;
-}
-
-.slider__arrow:hover {
-  opacity: 1;
+  color:#E3B873;
 }
 
 .slider__arrow.left {
-  left: 0;
+  left: 25%;
 }
 
 .slider__arrow.right {
-  right: 0;
+  right: 25%;
 }
 
 .slider__dots {
@@ -172,4 +182,31 @@ span{
 
 .slider__dots-item:hover, .slider__dots-item.active {
   background: #000;
+}
+
+.slider__switch{
+  position:relative;
+  width:500px;
+  height:50px;
+}
+
+.transparent__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Черный фон с прозрачностью */
+  color: white; /* Цвет текста */
+  display: flex; /* Используем flexbox для центрирования текста */
+  align-items: center; /* Вертикальное центрирование */
+  justify-content: center; /* Горизонтальное центрирование */
+  font-size: 24px; /* Размер шрифта */
+  opacity: 0; /* Начальное состояние невидимо */
+  transition: opacity 0.3s ease; /* Плавный переход */
+  z-index: 1; /* Убедитесь, что текст поверх изображения */
+}
+
+.slider__images.transparent__image {
+  opacity: 1; /* Показать текст */
 }
